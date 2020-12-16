@@ -27,4 +27,22 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 
+    compile group: 'com.opencsv', name: 'opencsv', version: '3.7'
+
+}
+
+task customFatJar(type: Jar) {
+
+    manifest {
+
+        attributes 'Main-Class': 'mastermind.api.controller.Controlador'
+
+    }
+
+    baseName = 'all-in-one-jar'
+
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+
+    with jar
+
 }
