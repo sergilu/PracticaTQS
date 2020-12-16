@@ -43,7 +43,8 @@ public class Controlador {
 	 * @param modelo - Instancia de la clase modelo.
 	 */
 	public Controlador(Vista vista, Modelo modelo) {
-
+		this.vista = vista;
+		this.modelo = modelo;
 	}
 
 	/**
